@@ -8,7 +8,9 @@
 		<div v-else class="grid gap-6 md:grid-cols-[1fr_320px]">
 			<ul class="space-y-4">
 				<li v-for="it in items" :key="it.id" class="flex items-center gap-4 rounded-lg border p-3 dark:border-gray-800">
-					<img :src="it.image" class="h-20 w-20 rounded object-cover" />
+					<div class="h-20 w-20 overflow-hidden rounded">
+						<img :src="it.image" class="h-20 w-20 object-cover transition-transform duration-250 transform hover:scale-105" />
+					</div>
 					<div class="flex-1">
 						<p class="font-medium">{{ it.name }}</p>
 						<p class="text-sm text-gray-500">{{ formatCurrency(it.price) }}</p>

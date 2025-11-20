@@ -22,9 +22,11 @@
 						type="button"
 						@click="selectSuggestion(product)"
 						@mousedown.prevent
-						class="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+						class="group flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
 					>
-						<img :src="product.thumbnail" :alt="product.title" class="h-10 w-10 rounded object-cover" />
+						<div class="h-10 w-10 overflow-hidden rounded">
+							<img :src="product.thumbnail" :alt="product.title" class="h-10 w-10 object-cover transition-transform duration-200 transform group-hover:scale-110" />
+						</div>
 						<div class="flex-1">
 							<p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ product.title }}</p>
 							<p class="text-xs text-gray-500 dark:text-gray-400">{{ product.price ? `$${product.price}` : 'N/A' }}</p>

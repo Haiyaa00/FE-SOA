@@ -1,7 +1,9 @@
 <template>
 	<div class="group rounded-lg border bg-white p-3 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-900">
 		<RouterLink :to="`/product/${product.id}`" class="block">
-			<img :src="product.image" :alt="product.name" class="aspect-square w-full rounded-md object-cover" />
+			<div class="overflow-hidden rounded-md">
+				<img :src="product.image" :alt="product.name" class="aspect-square w-full object-cover transition-transform duration-300 transform group-hover:scale-105" />
+			</div>
 			<h3 class="mt-3 line-clamp-1 font-medium">{{ product.name }}</h3>
 		</RouterLink>
 		<p class="mt-1 text-sm text-gray-500">{{ product.brand }}</p>

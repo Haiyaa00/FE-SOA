@@ -6,7 +6,9 @@
 			<span class="text-gray-700 dark:text-gray-300">{{ product.name }}</span>
 		</nav>
 		<div class="grid gap-8 md:grid-cols-2">
-			<img :src="product.image" :alt="product.name" class="w-full rounded-lg border object-cover dark:border-gray-800" />
+			<div class="overflow-hidden rounded-lg">
+				<img :src="product.image" :alt="product.name" class="w-full object-cover transition-transform duration-300 transform hover:scale-105 border dark:border-gray-800" />
+			</div>
 			<div>
 				<h1 class="text-2xl font-semibold">{{ product.name }}</h1>
 				<p class="mt-2 text-gray-500">{{ product.brand }}</p>
